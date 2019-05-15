@@ -5,13 +5,10 @@ branches:
   only:
   - master
 before_script:
-- npm install -g @angular/cli
+  - npm install -g firebase-tools
+  - npm install -g @angular/cli
 script:
-- ng lint
-- ng build --prod --base-href https://hacking-style.web.app/
-deploy:
-  skip_cleanup: true
-  provider: firebase
-  token:
-    secure: Cudu+89xUTHA9MS7WUYKtVOL2g/5CFU0QiBvxH9S7Fm0BPMEakceZxeHVLkGwHoEkUIehcuqpa8RbmvVqhzTUzoG2Bx1X1xkKF9pNWoPBBk980KtdUvg4IECRzph7QS2DA65gHgu8Bm8o0m3Ejkq1urHilSapvjY52F9wQLWJ+Tz3Cm5k1L0hWDGOIt0Zxh3U3bru3TRa0nW6hlPW5No8OcGpru59qJkAxpt8lwL/aPpz1ohIEshqGl5SeYORmy+iXm8+WCz2ZYYGMyxRcjbT1kjln2vky1BPBtFwoUU92rt+zOBocoHONbmxyuieRtSpuHrukC2TiGlsKbglJ0oKH6BjjijfOmHQ1xBJoYbERWL54JOuRrAOyGStaLQGYDmkKuXX7+ftDfTZ/fy7bhREQVDu1dHJI+Ryl9Dj/U++cI01SyENbNSVe6YBFokYHIm6gI3IKIlIqCnwDLOK/c/tOqy9JvDTsfFTzd26zxmmYNT2LnHHnUb+76KzzSu1vumUHwEbmweFZRSofXCKPhECTv6YTwISMeQeq/5m2ZnPZ6F0ndr88cTP/5kjW9ZNtbpYsE7KvdlqVyFitqBYQxkxHa+UZcqAw7usXOj8JJT4mpF9/4AoT3ulUMeI8WGv9y7gTdHsTEcfYjLh+KmBx3oN7mnGfT8nO75T2NwEjb31JU=
-
+  - ng lint
+  - ng build --prod --base-href https://hacking-style.web.app/
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
