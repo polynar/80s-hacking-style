@@ -17,4 +17,8 @@ export class BootComponent implements OnInit {
     this.appComponent.turnOff();
   }
 
+  resizeWindow() {
+    window.resizeTo(1024, 768);
+  }
+
 }

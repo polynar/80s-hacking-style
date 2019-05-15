@@ -4,13 +4,14 @@
 <!--</div>-->
 <!--<script src="https://player.vimeo.com/api/player.js"></script>-->
 
-<a (click)="playpause()">{{button}}</a>
+<a href="javascript:void(0)" (click)="playpause()">{{button}}</a>
 <input #seekbar type="range" step="any" id="seekbar" min="0" max="100" (change)="changeTheTime()">
 <label id="lblTime">{{time}}</label>
 <br>
-
-<video #video src="../../../assets/video/bbb.mp4" width="384" height="288"></video>
+<div class="video-scaling">
+  <video #video src="../../../assets/video/bbb.mp4" width="100%" height="100%"></video>
+</div>
 
 <div class="exit-button">
-  <a [routerLink]="['/']">Exit</a>
+  <a href="javascript:void(0)"  [routerLink]="['/']">Exit</a>
 </div>
