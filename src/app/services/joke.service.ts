@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {UserService} from './user.service';
+import {AuthService} from './auth.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ import {UserService} from './user.service';
 export class JokeService {
   firstName;
 
-  constructor(private userService: UserService, private httpClient: HttpClient) {
-    this.firstName = this.userService.firstName;
+  constructor(private authService: AuthService, private httpClient: HttpClient) {
+    // this.firstName = this.authService.user.name;
   }
 
   getJoke() {

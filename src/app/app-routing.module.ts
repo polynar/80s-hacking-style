@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {BootComponent} from './components/boot/boot.component';
 import {PwcrackComponent} from './components/pwcrack/pwcrack.component';
 import {VideoplayerComponent} from './components/videoplayer/videoplayer.component';
+import {LoginComponent} from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: BootComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
   { path: 'pwcrack', component: PwcrackComponent },
   { path: 'videoplayer', component: VideoplayerComponent },
+  { path: 'login', component: LoginComponent},
   { path: '**', component: AppComponent }
 ];
 

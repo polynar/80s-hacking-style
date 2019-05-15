@@ -10,12 +10,20 @@ import { FormsModule } from '@angular/forms';
 import { BootComponent } from './components/boot/boot.component';
 import {FortuneService} from './services/fortune.service';
 import {BullshitService} from './services/bullshit.service';
-import {UserService} from './services/user.service';
 import {JokeService} from './services/joke.service';
 import { PwcrackComponent } from './components/pwcrack/pwcrack.component';
 import { SecToTimePipe } from './sec-to-time.pipe';
 import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
 import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { LoginComponent } from './components/login/login.component';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+
+import { AuthService } from './services/auth.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -29,23 +37,29 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PwcrackComponent,
     SecToTimePipe,
     VideoplayerComponent,
+    LoginComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
   ],
   providers: [
-      UserService,
-      FortuneService,
-      BullshitService,
-      JokeService,
-      {
-        provide: PERFECT_SCROLLBAR_CONFIG,
-        useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-      }
+    FortuneService,
+    BullshitService,
+    JokeService,
+    AuthService,
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
   ],
   bootstrap: [AppComponent]
 })
