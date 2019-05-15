@@ -1,0 +1,21 @@
+<div class="frame">
+  <div *ngIf="!isOn" class="piece black noclick"></div>
+  <div id="turn-on" class="piece"  *ngIf="!isOn">
+    <a class="text-center" (click)="turnOn()" [routerLink]="['/']">Turn On</a>
+  </div>
+  <div class="piece output" [ngClass]="{ 'on': isOn, 'off noclick': !isOn }" [perfectScrollbar]>
+      <router-outlet></router-outlet>
+  </div>
+
+  <div class="piace overlay" [ngClass]="{ 'on': isOn, 'off': !isOn }">AV-1</div>
+
+  <div *ngIf="isOn" class="piece scanlines noclick"></div>
+  <div *ngIf="isOn" class="piece glow noclick"></div>
+
+
+</div>
+<svg style="display: none" class="noclick" data-bind="real-svg">
+    <filter id="green-filter">
+        <feColorMatrix type="matrix" values="0.10588235294117647 0 0 0 0 0 0.8313725490196079 0 0 0 0 0 0.34901960784313724 0 0 0 0 0 40 0"></feColorMatrix>
+    </filter>
+</svg>

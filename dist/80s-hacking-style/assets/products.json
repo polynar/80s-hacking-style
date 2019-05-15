@@ -1,0 +1,17 @@
+    {
+        "productId": "prod1",
+        "items": [
+            {
+                "itemId": "item1",
+                "cost": 500
+            },
+            {
+                "itemId": "item2",
+                "cost": 1000
+            },
+            {
+                "itemId": "item3",
+                "cost": 800
+            }
+        ]
+    }

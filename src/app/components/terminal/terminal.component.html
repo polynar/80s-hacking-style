@@ -1,0 +1,3 @@
+<div [perfectScrollbar] #term (click)="clickOnTerminal()" class="terminal"></div>
+
+<textarea #termInput (keydown)="acceptInput($event)" (blur)="textAreaBlur()" class="terminal-input"></textarea>

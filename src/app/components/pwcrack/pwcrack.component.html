@@ -1,0 +1,48 @@
+<div class="pwcrack-container">
+  <p class="text-center">PWCrack-ng 1.2 rc2</p>
+
+  <br>
+  <p class="timer text-center">
+    [{{ time | secToTime }}]&nbsp;{{keys}} keys tested ({{speed}} k/s)
+  </p>
+  <br>
+  <p class="text-center">
+    Current passphrase: {{cpw}}
+  </p>
+  <br>
+  <table>
+    <tr>
+      <td>
+        Master key:
+      </td>
+      <td>
+        <div class="hex">{{hex1}}</div>
+        <div class="hex">{{hex2}}</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Transient Key:
+      </td>
+      <td>
+        <div class="hex">{{hex3}}</div>
+        <div class="hex">{{hex4}}</div>
+        <div class="hex">{{hex5}}</div>
+        <div class="hex">{{hex6}}</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        EOPOL HMAC:
+      </td>
+      <td>
+        <div class="hex">{{hex7}}</div>
+      </td>
+    </tr>
+  </table>
+  <p class="text-center" *ngIf="complated">Completed</p>
+  <p class="text-center" *ngIf="complated">The password is: {{cpw}}</p>
+</div>
+<div class="exit-button">
+  <a [routerLink]="['/']">Exit</a>
+</div>
