@@ -76,8 +76,8 @@ export class LoginComponent implements OnInit {
       .then(res => {
 
         // Send Varification link in email
-        this.authService.sendEmailVerification().then(res => {
-          console.log(res);
+        this.authService.sendEmailVerification().then((data) => {
+          console.log(data);
           this.isForgotPassword = false;
           this.showMessage('success', 'Registration Successful! Please Verify Your Email');
         }, err => {
