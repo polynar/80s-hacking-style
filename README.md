@@ -3,6 +3,9 @@
 
 https://hacking-style.web.app/
 
+## Screenshot
+
+![Main Screen](src/assets/img/Screenshot%202019-05-15%20at%2023.12.03.png)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
 ## Development server
