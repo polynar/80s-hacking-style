@@ -15,44 +15,16 @@
   <app-root></app-root>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="/__/firebase/6.0.2/firebase-app.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#config-web-app -->
+       https://firebase.google.com/docs/web/setup#reserved-urls -->
 
-  <!-- Add the standard Performance Monitoring library -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-performance.js"></script>
+  <!-- Add the Performance Monitoring library -->
+  <script src="/__/firebase/6.0.2/firebase-performance.js"></script>
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyArkWXi8WGXsggFAam6-CVS1EcnzNXfLqY",
-      authDomain: "hacking-style.firebaseapp.com",
-      databaseURL: "https://hacking-style.firebaseio.com",
-      projectId: "hacking-style",
-      storageBucket: "hacking-style.appspot.com",
-      messagingSenderId: "717078031481",
-      appId: "1:717078031481:web:5c464b655775f8ca"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    // Initialize Performance Monitoring and get a reference to the service
-    var perf = firebase.performance();
-
-    // The perfMetrics object is created by the code that goes in <head>.
-    perfMetrics.onFirstInputDelay(function(delay, evt) {
-      ga('send', 'event', {
-        eventCategory: 'Perf Metrics',
-        eventAction: 'first-input-delay',
-        eventLabel: evt.type,
-        // Event values must be an integer.
-        eventValue: Math.round(delay),
-        // Exclude this event from bounce rate calculations.
-        nonInteraction: true,
-      });
-    });
-  </script>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
 
 </body>
 </html>
