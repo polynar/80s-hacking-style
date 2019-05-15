@@ -92,7 +92,7 @@ export class PwcrackComponent implements OnInit, OnDestroy {
     this.SpeedSubscription.unsubscribe();
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.TimerSubscription.unsubscribe();
     this.PassSubscription.unsubscribe();
     this.KeySubscription.unsubscribe();

@@ -9,4 +9,5 @@ branches:
 before_script:
   - npm install -g @angular/cli
 script:
+  - ng lint
   - ng build --prod --base-href https://hacking-style.web.app/
